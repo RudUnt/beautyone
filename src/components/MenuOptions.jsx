@@ -18,7 +18,7 @@ const MenuOptions = forwardRef(function MenuOptions(props, refs) {
         <h1>No options</h1>
       );
     } else if (props.options[1] === "state") {
-      return props.options[0].states.length > 0 ? (
+      return props.options[0]?.states?.length > 0 ? (
         props.options[0].states
           .sort((a, b) => {
             return a.name.localeCompare(b.name);
