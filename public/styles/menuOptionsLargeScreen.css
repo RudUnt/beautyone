@@ -1,0 +1,26 @@
+#menu_options_lrg_scr {
+  display: none;
+}
+
+@media (min-width: 1201px) {
+  #menu_options_lrg_scr {
+    display: flex;
+  }
+  #menu_options_lrg_scr > ul {
+    display: flex;
+    list-style: none;
+  }
+  #menu_options_lrg_scr > ul > li {
+    font-size: larger;
+    padding: 10px;
+  }
+  #menu_options_lrg_scr > ul > li > a {
+    text-decoration: none;
+    color: white;
+  }
+  #menu_options_lrg_scr > ul > li:hover {
+    cursor: pointer;
+    font-weight: 600;
+    color: #ffc55a;
+  }
+}

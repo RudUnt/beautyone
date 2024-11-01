@@ -1,0 +1,32 @@
+#select {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+#select > label {
+  display: inline;
+  margin: 5px 0;
+  color: #ead8b1;
+  font-weight: 700;
+  cursor: pointer;
+}
+#select_box {
+  font-weight: 400;
+  color: #ffc55a;
+  font-family: "Belleza", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  border: 2px groove #ffc55a;
+  padding: 9px 11px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#select > i {
+  color: #ead8b1;
+  position: relative;
+  align-self: end;
+  top: -28px;
+  right: 10px;
+  cursor: pointer;
+}

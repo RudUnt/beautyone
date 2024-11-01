@@ -1,0 +1,15 @@
+#button {
+  background-color: transparent;
+  margin-top: 10px;
+  padding: 10px 30px;
+  height: max-content;
+  color: #ead8b1;
+  border: 4px outset #ffc55a;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Belleza", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+}
+#button:hover {
+  border-style: inset;
+}

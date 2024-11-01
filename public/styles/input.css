@@ -1,0 +1,30 @@
+#input {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+#input > label {
+  display: inline;
+  margin: 5px 0;
+  color: #ead8b1;
+  font-weight: 700;
+  cursor: pointer;
+}
+#input > input {
+  height: 3em;
+  display: inline;
+  color: #ffc55a;
+  font-weight: 700;
+  padding: 5px 10px;
+  border: 2px groove #ffc55a;
+  border-radius: 5px;
+  background: transparent;
+}
+#input > input::placeholder {
+  font-weight: 400;
+  color: #ffc55a;
+  font-family: "Belleza", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+}
