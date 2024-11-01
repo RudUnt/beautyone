@@ -5,6 +5,7 @@ import SelectField from "./SelectField";
 import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import DialogBox from "./DialogBox";
 
 // Component SignUp
 function SignUp() {
@@ -25,6 +26,8 @@ function SignUp() {
     district: "",
     password: "",
     confirmPassword: "",});
+  const passwordChecker = useRef(null);
+  const [dialogBox, setDialogBox] = useState({});
 
   // fetch details of states of India
   useEffect(() => {
@@ -76,6 +79,16 @@ function SignUp() {
     }
   };
 
+  function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  function validateMobile(mobile) {
+    const regex = /^\d{10}$/;
+    return regex.test(mobile);
+  }
+  
   const alignMent = {
 
     alignSelf: "end",
@@ -84,6 +97,97 @@ function SignUp() {
   };
   const handleClick = function() {
 
+    if(userDetails.fullName === "") {
+
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "name",
+        title: "Name is empty",
+        definition: "Please fill your name",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(userDetails.email === "") {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "email",
+        title: "E-mail is empty",
+        definition: "Please fill your email",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(!validateEmail(userDetails.email)) {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "email",
+        title: "E-mail is invalid",
+        definition: "Please enter valid email",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(userDetails.mobile === "") {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "mobile",
+        title: "Mobile number is empty",
+        definition: "Please fill your mobile number",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(!validateMobile(userDetails.mobile)) {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "mobile",
+        title: "Mobile number is invalid",
+        definition: "Please enter valid mobile number",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(userDetails.state === "") {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "state",
+        title: "State is empty",
+        definition: "Please select your state",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(userDetails.district === "") {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "district",
+        title: "District is empty",
+        definition: "Please select your district",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(userDetails.password === "") {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "password",
+        title: "Password is empty",
+        definition: "Please fill your password",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }else if(userDetails.email === "") {
+      
+      const dialogBox = document.getElementById("dialogBox");
+      setDialogBox({
+        type: "confirmPassword",
+        title: "Confirm Password is empty",
+        definition: "Please fill your comfirm password",
+        buttonTitle: "OK",
+      })
+      dialogBox.style.display = "block";
+    }
     const userJson = JSON.stringify(userDetails);
     console.log(userJson);
   }
@@ -103,7 +207,13 @@ function SignUp() {
     }
     if(name === "confirmPassword") {
 
-      
+      if(!(value === userDetails.password)) {
+
+        passwordChecker.current.style.display = "block";
+      }else {
+
+        passwordChecker.current.style.display = "none";
+      }
     }
     event.preventDefault();
   };
@@ -181,9 +291,16 @@ function SignUp() {
             value = {userDetails.confirmPassword}
             onChange = {handleChange}
           />
+          <p id = "passwordChecker" ref={passwordChecker}>Mismatched password</p>
         </div>
         <Button style={alignMent} title="Sign Up" onClick = {handleClick} />
         <div id="circle"></div>
+        <DialogBox
+          type={dialogBox.type}
+          title={dialogBox.title}
+          definition={dialogBox.definition}
+          buttonTitle={dialogBox.buttonTitle}
+        />
       </div>
     </form>
   );

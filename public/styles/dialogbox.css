@@ -1,0 +1,77 @@
+/* Style for the modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal content */
+.modal-content {
+  /* background-color: #ead8b1 !important; */
+  background-image: url("../assets/background1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 50% auto; /* Center vertically */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px !important; /* Width of the dialog */
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content > h2, .modal-content > p {
+
+  color: #ffc55a;
+}
+/* Close button */
+.close {
+  position: relative;
+  color: #ffc55a !important;
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  cursor: pointer;
+}
+
+/* Style the buttons */
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #ffc55a;
+  border: 4px outset #ffc55a;
+  border-radius: 10px !important;
+  cursor: pointer;
+}
+
+button:hover {
+  border-style: inset;
+}
+
+/* Medium devices (tablets, 600px to 1200px) */
+@media (min-width: 601px) and (max-width: 1200px) {
+  /* Modal content */
+  .modal-content {
+    margin-top: 15%;
+    width: 400px !important; /* Width of the dialog */
+  }
+}
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1201px) {
+  /* Modal content */
+  .modal-content {
+    margin-top: 15%;
+    width: 500px !important; /* Width of the dialog */
+  }
+}
