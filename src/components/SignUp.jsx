@@ -6,6 +6,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import DialogBox from "./DialogBox";
+import Header from "./Header";
 
 // Component SignUp
 function SignUp() {
@@ -208,6 +209,8 @@ function SignUp() {
   if (err) return <h1>Tech issue...</h1>;
 
   return (
+    <div>
+      {/* <Header /> */}
     <form id="sign_in">
       <div style={{ margin: "100px 0 10px 0" }}>
         <h1>Sign Up</h1>
@@ -291,6 +294,7 @@ function SignUp() {
         />
       </div>
     </form>
+    </div>
   );
 }
 export default SignUp;

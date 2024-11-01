@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Button from "./Button"
+import Button from "./Button";
 
 function Welcome() {
   return (
@@ -17,20 +17,21 @@ function Welcome() {
               BeautyOne
             </h1>
             <p>
-              Step into a world where makeup isn't just a routine but a
-              transformative experience, where confidence is enhanced and
+              A final destination for all kinds of Make Up, Artificial Jewellery
+              and Cosmatics.Step into a world where makeup isn't just a routine
+              but a transformative experience, where confidence is enhanced and
               individuality celebrated.
             </p>
           </div>
         </div>
         <div id="artist">
           <div>
-            <div>Guari Untwal</div>
+            <div>Gauri Untwal</div>
             <div>MakeUp Artist</div>
           </div>
         </div>
       </div>
-      <br/>
+      <br />
     </div>
   );
 }
