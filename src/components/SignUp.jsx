@@ -195,10 +195,10 @@ function SignUp() {
       setUserDetails((prev) => ({ ...prev, [name]: value }));
     }
     if (name === "confirmPassword") {
-      if (!(value === userDetails.password)) {
-        passwordChecker.current.style.display = "block";
-      } else {
+      if (value === userDetails.password) {
         passwordChecker.current.style.display = "none";
+      } else {
+        passwordChecker.current.style.display = "block";
       }
     }
     event.preventDefault();
