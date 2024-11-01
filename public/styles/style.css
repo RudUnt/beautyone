@@ -2,7 +2,7 @@
   background-image: url(../assets/background1.png);
   width: 100%;
   /* height:100vh; */
-  min-height: 100vh;  
+  min-height: 100vh;
 }
 body {
   margin: 0;
@@ -15,7 +15,7 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-image: url(../assets/background1.png);
+  /* background-image: url(../assets/background1.png); */
   /* background-position: center; */
   /* background-repeat: repeat;
   background-size: contain; */
@@ -75,8 +75,8 @@ body {
 }
 #greeting_bg {
   margin-top: 3em;
-  width: 80%;
-  height: 30%;
+  width: 80vw;
+  min-height: 30vh;
   background-image: url("../assets/C-2.jpg");
   box-shadow: inset 0px -50px 200px #ead8b1;
   background-position: center;
@@ -97,7 +97,7 @@ body {
   align-items: center;
   width: 85%;
   height: 58%;
-  top: 90px;
+  top: 25%;
   background-color: #ead8b1;
   border-radius: 10px;
   border: 5px #ffc55a groove;
@@ -109,22 +109,27 @@ body {
   color: #001f3f;
   text-align: center;
   margin: 0;
-  margin-bottom: 5px;
   opacity: 0;
   animation: greeting_definition_content 2s 1.5s forwards;
 }
 .greeting_definition > p {
-  margin-bottom: 10px;
-  font-size: 0.8em;
+  /* margin-bottom: 10px; */
+  line-height: 1.2em;
+  font-size: 0.5em;
 }
-.greeting_definition > i {
-  align-self: end;
-  top: -10px;
+.greeting_definition > h1 {
+  margin-bottom: 10px;
+  font-size: 0.6em;
+}
+#greeting_bg > i {
+  align-self: self-start;
+  justify-self: self-end;
   font-size: 1.5em;
-  right: 5px;
+  left: 80%;
+  top: 60%;
   /* transform: rotateX(deg); */
   position: relative;
-  right: 2px;
+  z-index: 1;
 }
 @keyframes greeting_bg_slide {
   from {
@@ -162,10 +167,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   width: 80%;
-  height: 30%;
+  min-height: 30%;
   border-radius: 10px;
-  margin-top: 150px;
+  margin-top: 100px;
   opacity: 0;
+  position: relative;
   display: flex;
   flex-direction: column;
   animation: artist 2s 2s forwards, artist1 5s infinite;
@@ -189,7 +195,6 @@ body {
 #artist > div:first-child {
   position: relative;
   top: 70%;
-  right: 20%;
 }
 #artist > div:first-child > div {
   color: #ffc55a;
@@ -275,8 +280,38 @@ body {
   }
   .greeting_definition > i {
     top: -18px;
-  } 
+  }
   .greeting_definition > p {
     font-size: 1em;
   }
+}
+
+/* Tablet (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Styles for tablet screens */
+  #greeting_bg {
+
+    min-height: 40vw;
+  }
+  .greeting_definition {
+    max-height: 35vh;
+    height: auto;
+  }
+
+  .greeting_definition > p {
+    font-size: 0.8em;
+  }
+  .greeting_definition > h1 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+  }
+  /* #greeting_bg > i {
+    top: 13vh;
+  } */
+  #artist {
+      margin-top: 170px;
+      min-height: 50vw;
+      margin-bottom: 200px;
+  }
+  
 }

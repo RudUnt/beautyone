@@ -1,13 +1,18 @@
 import Header from "./Header";
+import Button from "./Button"
 
 function Welcome() {
   return (
     <div>
       <div id="welcome">
         <Header />
+        <br />
+        {/* <Button style = {{display: "inline"}} title="Make Up"/>
+        <Button style = {{display: "inline"}} title="Cosmatics"/>
+        <Button style = {{display: "inline"}}  title="Jewellary"/> */}
         <div id="greeting_bg">
+          {/* <i className="fa-solid fa-ribbon"></i> */}
           <div className="greeting_definition">
-            <i className="fa-solid fa-ribbon"></i>
             <h1>
               Welcome to <br />
               BeautyOne
@@ -26,6 +31,7 @@ function Welcome() {
           </div>
         </div>
       </div>
+      <br/>
     </div>
   );
 }
