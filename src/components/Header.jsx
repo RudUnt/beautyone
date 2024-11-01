@@ -10,7 +10,7 @@ function Header() {
       address: "/signin",
     },
     {
-      name: "Sing Up",
+      name: "Sign Up",
       address: "/signup",
     },
     {

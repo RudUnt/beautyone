@@ -6,7 +6,6 @@ function Welcome() {
     <div>
       <div id="welcome">
         <Header />
-        <br />
         {/* <Button style = {{display: "inline"}} title="Make Up"/>
         <Button style = {{display: "inline"}} title="Cosmatics"/>
         <Button style = {{display: "inline"}}  title="Jewellary"/> */}
